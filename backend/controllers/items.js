@@ -25,7 +25,7 @@ module.exports = {
             console.log(req.body)
             await journalEntry.create({ 
                 text: req.body.text, 
-                completed: req.body.reminder
+                completed: req.body.completed
             })
             console.log('Entry has been added!')
             //res.send()

@@ -1,7 +1,18 @@
-<div class="entry">
+<div 
+class="entry" 
+[ngClass]="entry.completed ? 'completed' : '' "
+(dblclick)="onDoubleClick(entry)"
+>
     <h3>
+
         {{entry.text}} 
-        <fa-icon [icon]="xIcon" [ngStyle]="{color: 'red'}"></fa-icon>
+
+        <fa-icon 
+        [icon]="xIcon"
+        [ngStyle]="{color: 'red'}"
+        (click)="onDelete(entry)"
+        ></fa-icon>
+
     </h3>
     <p>{{entry.day}}</p>
 </div>

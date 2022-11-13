@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵisDefaultChangeDetectionStrategy } from '@angular/core';
 import {Entry} from '../../Entry'
-import {ENTRYS} from '../../test-entry-set'
+
+import { EntryService } from 'src/app/services/entry.service';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -10,11 +12,30 @@ import {ENTRYS} from '../../test-entry-set'
 })
 export class JournalComponent implements OnInit {
 
-  journal: Entry[] = ENTRYS;
+  journal: Entry[] = [];
 
-  constructor() { }
+  constructor(private entryService: EntryService) { }
 
   ngOnInit(): void {
-  }
+    this.entryService.getJournal()
+    .subscribe((journal) => this.journal = journal)
+    }
+  
+    deleteEntry(entry: Entry) {
+      this.entryService
+        .deleteEntry(entry)
+        .subscribe( () => this.entryService.getJournal().subscribe((journal) => this.journal = journal)
+        );
+    }
+
+    toggleCompleted(entry: Entry) {
+      entry.completed = !entry.completed;
+      this.entryService.updateCompleted(entry).subscribe();
+    }
+  
+    addEntry(entry: Entry) {
+      this.entryService.addEntry(entry).subscribe(() => 
+      window.location.reload())
+    }
 
 }

@@ -1,6 +1,6 @@
 export interface Entry {
-    _id: string;
+    _id?: string;
     text: string;
-    completed: boolean;
-    day: string;
+    completed?: boolean;
+    day?: string;
 }
