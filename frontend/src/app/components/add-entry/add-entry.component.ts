@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Entry } from '../../Entry'
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-add-entry',
@@ -10,13 +12,21 @@ export class AddEntryComponent implements OnInit {
   text!: string;
   day!: string;
   completed: boolean = false;
+  showCreateEntry!: boolean;
+  subscription!: Subscription;
 
   @Output() emitNewEntry: EventEmitter<Entry> = new EventEmitter();
 
-  constructor() { }
+  constructor(private uiService: UiService) {
+    this.subscription = this.uiService.onToggleShowCreateEntry()
+    .subscribe(boolVal => this.showCreateEntry = boolVal)
+   }
   ngOnInit(): void {
   }
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe(); //for memory leaks
+}
   onSubmit(){
     if (!this.text) alert('Entry cannot be empty')
 

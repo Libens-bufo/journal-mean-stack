@@ -10,6 +10,12 @@ import { JournalComponent } from './components/journal/journal.component';
 import { JournalEntryComponent } from './components/journal-entry/journal-entry.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddEntryComponent } from './components/add-entry/add-entry.component';
+import { RouterModule, Routes } from '@angular/router';
+import { WrapperComponent } from './components/wrapper/wrapper.component';
+
+const routes: Routes = [
+  {path: 'journal', component: JournalComponent}
+]
 
 @NgModule({
   declarations: [
@@ -18,14 +24,17 @@ import { AddEntryComponent } from './components/add-entry/add-entry.component';
     ButtonComponent,
     JournalComponent,
     JournalEntryComponent,
-    AddEntryComponent
+    AddEntryComponent,
+    WrapperComponent
   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
+  exports:[JournalComponent, HeaderComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

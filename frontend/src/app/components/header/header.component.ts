@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UiService } from 'src/app/services/ui.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -9,12 +11,18 @@ export class HeaderComponent implements OnInit {
 
   title: string = 'My Wellness Journal';
 
-  constructor() { }
+  showCreateEntry!: boolean;
+  subscription!: Subscription;
 
-  ngOnInit(): void {
-  }
+  constructor(private uiService: UiService) {
+    this.subscription = this.uiService.onToggleShowCreateEntry()
+    .subscribe(bool => this.showCreateEntry = bool) //catch value from uiService (this.show...: boolean)
+
+   }
+  ngOnInit(): void {}
+
   toggleAdd(){
-    console.log('toggle');
+    this.uiService.togggleShowCreateEntry()
     
   }
 
