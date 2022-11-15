@@ -11,10 +11,12 @@ import { JournalEntryComponent } from './components/journal-entry/journal-entry.
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddEntryComponent } from './components/add-entry/add-entry.component';
 import { RouterModule, Routes } from '@angular/router';
-import { WrapperComponent } from './components/wrapper/wrapper.component';
+import { SplashComponent } from './components/splash/splash.component';
+
 
 const routes: Routes = [
-  {path: 'journal', component: JournalComponent}
+  {path: 'journal', component: JournalComponent},
+  {path: 'welcome', component: SplashComponent}
 ]
 
 @NgModule({
@@ -25,7 +27,7 @@ const routes: Routes = [
     JournalComponent,
     JournalEntryComponent,
     AddEntryComponent,
-    WrapperComponent
+    SplashComponent,
   ],
   imports: [
     BrowserModule,
