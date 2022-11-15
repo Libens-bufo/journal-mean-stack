@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 
 * {
@@ -11,7 +15,7 @@ body {
 }
 
 .container {
-  max-width: 500px;
+  max-width: auto;
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;

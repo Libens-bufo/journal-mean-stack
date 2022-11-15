@@ -11,6 +11,8 @@ import { UiService } from 'src/app/services/ui.service';
 export class AddEntryComponent implements OnInit {
   text!: string;
   day!: string;
+  numDrinks!:number;
+  mood!:number;
   completed: boolean = false;
   showCreateEntry!: boolean;
   subscription!: Subscription;

@@ -1,0 +1,15 @@
+
+<div class="flex flex-row" >
+    <ng-container *ngFor="let drink of drinks">
+        <app-drink 
+        [rating]="hover || rating" 
+        [drinkId]="drink"
+        (enter)="enter($event)"
+        (leave)="leave()"
+        (click)="setRating(drink)"
+        ></app-drink>
+    </ng-container >
+
+</div>
+
+

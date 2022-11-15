@@ -11,6 +11,26 @@
         [(ngModel)]="day"
         />
     </div>
+    <div class="flex flex-grow justify-around">
+        How many drinks did I have?<p>{{numDrinks}}</p>
+        <div class="flex justify-around">
+            <label for="drinks"></label>
+            <input type="range" name="numDrinks" id="numDrinks" min="0" max="10" step="1" value="0" [(ngModel)]="numDrinks">
+            
+        </div>
+    </div>
+
+    <div class="flex flex-grow justify-around">
+        How positive was my mood?
+        <div>{{mood}}</div>
+        <div>
+            <label for="mood"></label>
+            <input class="slider" type="range" name="mood" id="mood" min="1" max="10" step="1" value="8" [(ngModel)]="mood">
+            
+        </div>
+
+    </div>
+
     <div class="form-control form-control-check">
         <label for="text">Task completed? </label>
         <input type="checkbox" name="completed" id="completed" 

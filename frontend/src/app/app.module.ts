@@ -12,6 +12,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddEntryComponent } from './components/add-entry/add-entry.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SplashComponent } from './components/splash/splash.component';
+import { DrinkComponent } from './components/rating/drinks/drink/drink.component';
+import { DrinksComponent } from './components/rating/drinks/drinks/drinks.component';
 
 
 const routes: Routes = [
@@ -28,6 +30,8 @@ const routes: Routes = [
     JournalEntryComponent,
     AddEntryComponent,
     SplashComponent,
+    DrinkComponent,
+    DrinksComponent,
   ],
   imports: [
     BrowserModule,
