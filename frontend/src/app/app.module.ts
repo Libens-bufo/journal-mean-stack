@@ -14,6 +14,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { SplashComponent } from './components/splash/splash.component';
 import { DrinkComponent } from './components/rating/drinks/drink/drink.component';
 import { DrinksComponent } from './components/rating/drinks/drinks/drinks.component';
+import { MoodRatingComponent } from './components/rating/mood/mood-rating/mood-rating.component';
+import { MoodRatingItemComponent } from './components/rating/mood/mood-rating-item/mood-rating-item.component';
 
 
 const routes: Routes = [
@@ -32,6 +34,8 @@ const routes: Routes = [
     SplashComponent,
     DrinkComponent,
     DrinksComponent,
+    MoodRatingComponent,
+    MoodRatingItemComponent,
   ],
   imports: [
     BrowserModule,

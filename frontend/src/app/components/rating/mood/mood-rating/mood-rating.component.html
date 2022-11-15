@@ -1,0 +1,12 @@
+
+<div class="flex flex-row" >
+    <ng-container *ngFor="let face of faces">
+        <app-mood-rating-item 
+        [rating]="hover || rating" 
+        [faceId]="face"
+        (enter)="enter($event)"
+        (leave)="leave()"
+        (click)="setRating(face)"
+        ></app-mood-rating-item>
+    </ng-container >
+</div>
