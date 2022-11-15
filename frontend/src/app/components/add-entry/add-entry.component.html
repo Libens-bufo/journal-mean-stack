@@ -2,7 +2,8 @@
 
 
 <form *ngIf="showCreateEntry" class="add-form" (ngSubmit)="onSubmit()">
-    <app-drinks></app-drinks>
+    <app-drinks (outRating)="takeDrinkRating($event)"></app-drinks>
+    <app-mood-rating (outputMood)="takeMoodRating($any($event))"></app-mood-rating>
     <div class="form-control">
         <label for="text">Add Entry</label>
         <input type="text" name="text" id="text" placeholder="Add Entry"

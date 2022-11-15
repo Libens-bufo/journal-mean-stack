@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-mood-rating',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mood-rating.component.css']
 })
 export class MoodRatingComponent implements OnInit {
-
+  @Output() outputMood: EventEmitter<number> = new EventEmitter()
   constructor() { }
 
   ngOnInit(): void {
@@ -23,5 +23,7 @@ export class MoodRatingComponent implements OnInit {
   }
   setRating(num:number){
     this.rating = num;
+    this.emitRating()
   }
+  emitRating(){this.outputMood.emit(this.rating);}
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-drinks',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./drinks.component.css']
 })
 export class DrinksComponent implements OnInit {
-
+  @Output() outRating: EventEmitter<number> = new EventEmitter()
   constructor() { }
 
   ngOnInit(): void {
@@ -23,6 +23,7 @@ export class DrinksComponent implements OnInit {
   }
   setRating(num:number){
     this.rating = num;
+    this.emitRating()
   }
-
+  emitRating(){this.outRating.emit(this.rating)}
 }
