@@ -2,44 +2,36 @@
 
 
 <form *ngIf="showCreateEntry" class="add-form" (ngSubmit)="onSubmit()">
-    <app-drinks (outRating)="takeDrinkRating($event)"></app-drinks>
-    <app-mood-rating (outputMood)="takeMoodRating($any($event))"></app-mood-rating>
-    <div class="form-control">
-        <label for="text">Add Entry</label>
-        <input type="text" name="text" id="text" placeholder="Add Entry"
-        [(ngModel)]="text"
+    
+    
+    <div class="flex ">
+        <label for="text">Journal Entry:</label>
+        <!-- <input type="text" name="textOld" id="textOld" placeholder="Add Entry"
+        /> -->
+        <textarea class="flex-grow" name="text" id="text" placeholder="Journal Entry" [(ngModel)]="text"></textarea>
+    </div>
+    <div class=" flex justify-between">
+        <label for="text">Goal for the Day:</label>
+        <input type="text" name="goal" id="goal" placeholder="Goal"
+        [(ngModel)]="goal"
         />
     </div>
-    <div class="form-control">
-        <label for="text">Set Day</label>
-        <input type="text" name="day" id="day" placeholder="Add Day"
-        [(ngModel)]="day"
-        />
-    </div>
-    <div class="flex flex-grow justify-around">
-        How many drinks did I have?<p>{{numDrinks}}</p>
-        <div class="flex justify-around">
-            <label for="drinks"></label>
-            <input type="range" name="numDrinks" id="numDrinks" min="0" max="10" step="1" value="0" [(ngModel)]="numDrinks">
-            
-        </div>
+    <div class="flex justify-between">
+        How many drinks did I have?
+        <app-drinks (outRating)="takeDrinkRating($event)"></app-drinks>
+
     </div>
 
-    <div class="flex flex-grow justify-around">
+    <div class="flex justify-between">
         How positive was my mood?
-        <div>{{mood}}</div>
-        <div>
-            <label for="mood"></label>
-            <input class="slider" type="range" name="mood" id="mood" min="1" max="10" step="1" value="8" [(ngModel)]="mood">
-            
-        </div>
+        <app-mood-rating (outputMood)="takeMoodRating($event)"></app-mood-rating>
 
     </div>
 
-    <div class="form-control form-control-check">
-        <label for="text">Task completed? </label>
-        <input type="checkbox" name="completed" id="completed" 
-        [(ngModel)]="completed"
+    <div class="flex justify-between">
+        <label class="flex-grow"for="text">Exercised?</label>
+        <input class="flex-grow-2 padx-50"type="checkbox" name="exercise" id="exercise" 
+        [(ngModel)]="exercise"
         />
     </div>
     <input type="submit" value="Save Entry" class="btn btn-block add">

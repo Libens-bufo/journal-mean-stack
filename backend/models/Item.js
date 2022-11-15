@@ -1,15 +1,11 @@
 const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema({
-  todo: {
-    type: String,
-    required: false,
-  },
   completed: {
     type: Boolean,
     required: false,
   },
-  reminder: {
+  exercise: {
     type: Boolean,
     required: false,
   },
@@ -17,10 +13,22 @@ const schema = new mongoose.Schema({
     type: String,
     required: false,
   },
-  day: {
+  goal: {
+    type: String,
+    required: false,
+  },
+  date: {
+    type: Date,
+    required: false,
+  },
+  drinks: {
+    type: Number,
+    required: false,
+  },
+  mood: {
     type: String,
     required: false,
   }
 })
 
-module.exports = mongoose.model('Todo', schema)
+module.exports = mongoose.model('Entry', schema)

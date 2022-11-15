@@ -10,14 +10,14 @@ import { UiService } from 'src/app/services/ui.service';
 })
 export class AddEntryComponent implements OnInit {
   text!: string;
-  day!: string;
-  numDrinks!:number;
-  mood!:number;
+  goal!: string;
   completed: boolean = false;
   showCreateEntry!: boolean;
   subscription!: Subscription;
   drinkRating!: number;
   moodRating!: number;
+  exercise: boolean = false;
+  date!: Date;
 
   @Output() emitNewEntry: EventEmitter<Entry> = new EventEmitter();
 
@@ -44,12 +44,18 @@ export class AddEntryComponent implements OnInit {
 
     const entry = {
       text: this.text,
-      day: this.day,
-      completed: this.completed
+      completed: false,
+      date: new Date(),
+      goal: this.goal,
+      drinks: this.drinkRating,
+      mood: this.moodRating,
+      exercise: this.exercise
     }
     this.emitNewEntry.emit(entry)
     this.text = '';
-    this.day = ''
     this.completed = false;
+    this.exercise = false;
+    this.moodRating = 0;
+    this.drinkRating = 0;
   }
 }

@@ -10,22 +10,13 @@ module.exports = {
             console.log(err)
         }
     },
-    getItemsTest: async (req, res) => {
-        try{
-        const journalItems = await journalEntry.find();
-        const itemsLeft = await journalEntry.countDocuments({completed:false}) 
-        res.render('todos.ejs', {todos: journalItems, left: itemsLeft})
-        }
-        catch (e){
-            console.log(e)
-        }
-    },
     createItem: async (req, res)=>{
         try{
             console.log(req.body)
             await journalEntry.create({ 
                 text: req.body.text, 
-                completed: req.body.completed
+                completed: req.body.completed,
+                date: req.body.date
             })
             console.log('Entry has been added!')
             //res.send()
