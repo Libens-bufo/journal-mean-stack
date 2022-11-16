@@ -1,6 +1,6 @@
 import { Component, OnInit, ɵisDefaultChangeDetectionStrategy } from '@angular/core';
 import {Entry} from '../../Entry'
-
+import { Router } from '@angular/router';
 import { EntryService } from 'src/app/services/entry.service';
 import { Observable } from 'rxjs';
 
@@ -14,12 +14,12 @@ export class JournalComponent implements OnInit {
 
   journal: Entry[] = [];
 
-  constructor(private entryService: EntryService) { }
+  constructor(private entryService: EntryService, private router: Router) { }
 
   ngOnInit(): void {
     this.entryService.getJournal()
     .subscribe((journal) => this.journal = journal)
-    console.log(this.journal, 'Journ')
+
     }
   
     deleteEntry(entry: Entry) {
@@ -35,8 +35,14 @@ export class JournalComponent implements OnInit {
     }
   
     addEntry(entry: Entry) {
-      this.entryService.addEntry(entry).subscribe(() => 
-      window.location.reload())
+      this.entryService.addEntry(entry).subscribe()//() => window.location.reload())
+      this.changeLocation() //instead of reloading
     }
-
+    changeLocation() {
+      const currentRoute = this.router.url;
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          this.router.navigate([currentRoute]); // navigate to same route
+      }); 
+  }
+  
 }
