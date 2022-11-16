@@ -19,6 +19,7 @@ export class JournalComponent implements OnInit {
   ngOnInit(): void {
     this.entryService.getJournal()
     .subscribe((journal) => this.journal = journal)
+    console.log(this.journal, 'Journ')
     }
   
     deleteEntry(entry: Entry) {

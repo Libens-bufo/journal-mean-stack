@@ -17,7 +17,7 @@ export class AddEntryComponent implements OnInit {
   drinkRating!: number;
   moodRating!: number;
   exercise: boolean = false;
-  date!: Date;
+  date!: String;
 
   @Output() emitNewEntry: EventEmitter<Entry> = new EventEmitter();
 
@@ -39,13 +39,14 @@ export class AddEntryComponent implements OnInit {
     this.moodRating = $event;
     console.log(this.moodRating)
   }
+
+
   onSubmit(){
     if (!this.text) alert('Entry cannot be empty')
-
+    let date = new Date()
     const entry = {
       text: this.text,
       completed: false,
-      date: new Date(),
       goal: this.goal,
       drinks: this.drinkRating,
       mood: this.moodRating,

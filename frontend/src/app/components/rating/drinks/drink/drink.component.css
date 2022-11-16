@@ -1,6 +1,7 @@
 .rating-empty{
     fill: black;
+    @apply drop-shadow-sm
 }
 .rating-selected{
-    fill: blue;
+    @apply fill-cyan-400
 }

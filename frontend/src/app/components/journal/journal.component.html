@@ -1,7 +1,7 @@
 <app-add-entry (emitNewEntry)="addEntry($event)"></app-add-entry>
 
 <app-journal-entry 
-*ngFor="let entry of journal" 
+*ngFor="let entry of journal.reverse()" 
 [entry]="entry"
 (onDeleteEntry)="deleteEntry(entry)"
 (onToggleCompleted)="toggleCompleted(entry)"

@@ -1,4 +1,15 @@
-<header class="headerx">
-    <h1>{{title}}</h1>
-<app-button *ngIf="hasRoute('/journal')" text="{{showCreateEntry ? 'Close Form' : 'Add Entry'}}" color="{{showCreateEntry ? 'blue' : 'purple'}}" (btnClick)="toggleAdd()"></app-button>
+<header class="headerx ">
+
+    <div>
+        <svg class="fill-slate-700 drop-shadow-md hover:fill-blue-600 hover:drop-shadow-xl" width="67.489mm" height="9.7823mm" version="1.1" viewBox="0 0 67.489 9.7823" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(-72.571 -151.23)">
+            <text x="72.571426" y="157.99405" style="font-family:'Brush Script MT';font-size:10.583px;line-height:1.25;stroke-width:.26458" xml:space="preserve"><tspan x="72.571426" y="157.99405" style="stroke-width:.26458">myWellness Journal</tspan></text>
+            <text style="font-family:'Brush Script MT';font-size:10.583px;line-height:1.25;shape-inside:url(#rect24);white-space:pre" xml:space="preserve"/>
+            <text x="72.571426" y="157.99405" style="font-family:'Brush Script MT';font-size:10.583px;line-height:1.25;stroke-width:.26458" xml:space="preserve"><tspan x="72.571426" y="157.99405" style="stroke-width:.26458">myWellness Journal</tspan></text>
+            </g>
+        </svg><div class="text-slate-500">v1.0</div>
+    </div>
+<app-button *ngIf="hasRoute('/journal')" text="{{showCreateEntry ? 'Close Form' : 'Add Entry'}}" color="{{showCreateEntry ? 'blue' : '#234567'}}" (btnClick)="toggleAdd()"></app-button>
 </header>
+
+<!-- color="{{showCreateEntry ? 'blue' : 'purple'}} -->

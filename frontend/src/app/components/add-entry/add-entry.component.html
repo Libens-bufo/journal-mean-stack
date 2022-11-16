@@ -1,30 +1,30 @@
 
 
 
-<form *ngIf="showCreateEntry" class="add-form" (ngSubmit)="onSubmit()">
+<form *ngIf="showCreateEntry" class="add-form border-solid border-2 border-sky-900 hover:border-sky-300 px-2 py-2 rounded" (ngSubmit)="onSubmit()">
     
     
     <div class="flex ">
-        <label for="text">Journal Entry:</label>
+        <label for="text"></label>
         <!-- <input type="text" name="textOld" id="textOld" placeholder="Add Entry"
         /> -->
-        <textarea class="flex-grow" name="text" id="text" placeholder="Journal Entry" [(ngModel)]="text"></textarea>
+        <textarea class="flex-grow block mb-2 bg-slate-300" name="text" id="text" placeholder="Journal Entry" [(ngModel)]="text"></textarea>
     </div>
     <div class=" flex justify-between">
-        <label for="text">Goal for the Day:</label>
-        <input type="text" name="goal" id="goal" placeholder="Goal"
+        <label class="" for="text">Goal for the Day:</label>
+        <input class="flex-grow max-w-sm mb-2 bg-slate-300" type="text" name="goal" id="goal" placeholder="Goal"
         [(ngModel)]="goal"
         />
     </div>
     <div class="flex justify-between">
         How many drinks did I have?
-        <app-drinks (outRating)="takeDrinkRating($event)"></app-drinks>
+        <app-drinks class="mb-2"(outRating)="takeDrinkRating($event)"></app-drinks>
 
     </div>
 
     <div class="flex justify-between">
         How positive was my mood?
-        <app-mood-rating (outputMood)="takeMoodRating($event)"></app-mood-rating>
+        <app-mood-rating class="mb-2"(outputMood)="takeMoodRating($event)"></app-mood-rating>
 
     </div>
 
@@ -34,5 +34,5 @@
         [(ngModel)]="exercise"
         />
     </div>
-    <input type="submit" value="Save Entry" class="btn btn-block add">
+    <input type="submit" value="Save Entry" class="btnadd btntw btn-block">
 </form>

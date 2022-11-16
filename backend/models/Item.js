@@ -8,6 +8,7 @@ const schema = new mongoose.Schema({
   exercise: {
     type: Boolean,
     required: false,
+    default: false
   },
   text: {
     type: String,
@@ -20,14 +21,17 @@ const schema = new mongoose.Schema({
   date: {
     type: Date,
     required: false,
+    default: Date.now
   },
   drinks: {
     type: Number,
-    required: false,
+    required: true,
+    default: 0
   },
   mood: {
-    type: String,
-    required: false,
+    type: Number,
+    required: true,
+    default: 10
   }
 })
 

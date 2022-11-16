@@ -1,18 +1,24 @@
-<div 
-class="entry" 
-[ngClass]="entry.completed ? 'completed' : '' "
-(dblclick)="onDoubleClick(entry)"
->
-    <h3>
 
-        {{entry.text}} 
-
-        <fa-icon 
+<div [ngClass]="entry.completed ? 'completed' : '' "
+(dblclick)="onDoubleClick(entry)"[ngClass]="entry.completed ? 'completed' : '' " class="max-w-3xl py-4 px-8 bg-white shadow-lg rounded-lg my-20">
+    <div class="flex justify-start md:justify-start -mt-6 ">
+        <a [ngClass]="entry.completed ? 'completed-circle' : '' " class="w-5 h-5 object-cover rounded-full border-4 border-cyan-500 bg-cyan-500"></a>
+    </div>
+    <div>
+      <h2 class="text-gray-800 text-3xl font-semibold">{{entry.date | date:'short':'+01900' }}</h2>
+      <div class="flex justify-left justify-between border-b mb-2">
+       <div>Drinks: {{entry.drinks}}   </div>
+       <div>Mood Rating: {{entry.mood}} </div>  
+       <div>
+        <div [ngClass]="entry.completed ? 'underline' : '' ">Goal: {{entry.goal}}</div>
+        </div>
+        </div>  
+      <div>{{entry.text}}</div>
+    </div>
+    <div class="flex justify-end mt-4">
+        <fa-icon
         [icon]="xIcon"
         [ngStyle]="{color: 'red'}"
-        (click)="onDelete(entry)"
-        ></fa-icon>
-
-    </h3>
-    <p>{{entry.day}}</p>
-</div>
+        (click)="onDelete(entry)" class="text-xl font-medium text-indigo-500">John Doe</fa-icon>
+    </div>
+  </div>

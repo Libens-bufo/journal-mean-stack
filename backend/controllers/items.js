@@ -16,7 +16,11 @@ module.exports = {
             await journalEntry.create({ 
                 text: req.body.text, 
                 completed: req.body.completed,
-                date: req.body.date
+                date: req.body.date,
+                goal: req.body.goal,
+                drinks: req.body.drinks,
+                mood: req.body.mood,
+                exercise: req.body.exercise
             })
             console.log('Entry has been added!')
             //res.send()

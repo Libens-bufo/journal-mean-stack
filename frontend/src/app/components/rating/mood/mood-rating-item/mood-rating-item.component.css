@@ -2,5 +2,5 @@
     fill: black;
 }
 .rating-selected{
-    fill: blue;
+    @apply fill-cyan-400
 }

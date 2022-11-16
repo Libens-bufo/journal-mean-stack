@@ -5,8 +5,11 @@
     cursor: pointer;
   }
   
-  .entry.completed {
-    border-left: 5px solid green;
+  .completed {
+    border-left: 5px solid rgb(52, 202, 52);
+  }
+  .completed-circle {
+    background-color: rgb(52, 202, 52);
   }
   
   .entry h3 {

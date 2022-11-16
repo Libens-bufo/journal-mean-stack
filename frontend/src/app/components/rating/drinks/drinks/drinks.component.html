@@ -1,7 +1,7 @@
 
 <div class="flex flex-row" >
     <ng-container *ngFor="let drink of drinks">
-        <app-drink 
+        <app-drink class="drop-shadow"
         [rating]="hover || rating" 
         [drinkId]="drink"
         (enter)="enter($event)"
