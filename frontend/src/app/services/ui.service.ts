@@ -10,7 +10,7 @@ export class UiService {
 
   constructor() { }
 
-  togggleShowCreateEntry(){
+  toggleShowCreateEntry(){
     this.showCreateEntry = !this.showCreateEntry;
     this.subject.next(this.showCreateEntry);
   }

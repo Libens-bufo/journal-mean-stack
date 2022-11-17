@@ -20,14 +20,14 @@ export class HeaderComponent implements OnInit {
     .subscribe(bool => this.showCreateEntry = bool) //catch value from uiService (this.show...: boolean)
 
    }
-  ngOnInit(): void {console.log(this.hasRoute('/'))}
+  ngOnInit(): void {}
 
   toggleAdd(){
-    this.uiService.togggleShowCreateEntry()
+    this.uiService.toggleShowCreateEntry()
   }
 
   hasRoute(route: string){ //checks if the passed route is the route
-    console.log(this.router.url)
+    
     return this.router.url === route;
   }
 

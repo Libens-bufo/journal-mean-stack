@@ -33,16 +33,19 @@ export class AddEntryComponent implements OnInit {
 }
   takeDrinkRating($event: number){
     this.drinkRating = $event;
-    console.log(this.drinkRating)
+    
   }
   takeMoodRating($event: number){
     this.moodRating = $event;
-    console.log(this.moodRating)
+    
   }
 
 
   onSubmit(){
-    if (!this.text) alert('Entry cannot be empty')
+    if (!this.text) {
+      alert('Entry cannot be empty')
+      return;
+    }
     let date = new Date()
     const entry = {
       text: this.text,

@@ -5,10 +5,11 @@
         <a [ngClass]="entry.completed ? 'completed-circle' : '' " class="w-5 h-5 object-cover rounded-full border-4 border-cyan-500 bg-cyan-500"></a>
     </div>
     <div>
-      <h2 class="text-gray-800 text-3xl font-semibold">{{entry.date | date:'short':'+01900' }}</h2>
+      <h2 class="text-gray-800 text-3xl font-semibold">{{entry.date | date:'short':'-0500' }}</h2>
       <div class="flex justify-left justify-between border-b mb-2">
-       <div>Drinks: {{entry.drinks}}   </div>
-       <div>Mood Rating: {{entry.mood}} </div>  
+        <div>Mood Rating: {{entry.mood}} </div>  
+        <div>Drinks: {{entry.drinks}}   </div>
+       <div>Exercise: {{entry.exercise ? 'Yes' : 'No'}} </div>  
        <div>
         <div [ngClass]="entry.completed ? 'underline' : '' ">Goal: {{entry.goal}}</div>
         </div>

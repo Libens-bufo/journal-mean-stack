@@ -35,8 +35,9 @@ export class JournalComponent implements OnInit {
     }
   
     addEntry(entry: Entry) {
-      this.entryService.addEntry(entry).subscribe()//() => window.location.reload())
-      this.changeLocation() //instead of reloading
+      //this.journal.push(entry)
+      this.entryService.addEntry(entry).subscribe(() => window.location.reload())
+      //this.changeLocation() //instead of reloading
     }
     changeLocation() {
       const currentRoute = this.router.url;
