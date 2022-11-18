@@ -1,4 +1,4 @@
-# journal-mean-stack
+# myWellness Journal AKA iRecover Journal
 
 This is a fully functioning full stack CRUD app / REST API in the MEAN stack that facilitates cognitive-behavioral style journaling.
 
